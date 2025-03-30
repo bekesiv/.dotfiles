@@ -1,0 +1,19 @@
+[user]
+	name = Viktor Bekesi
+	email = viktor.bekesi@outlook.com
+[merge]
+	tool = meld
+[mergetool "meld"]
+	path = /usr/bin/meld
+[mergetool]
+	prompt = false
+	keepBackup = false
+	trustExitCode = false
+[diff]
+	guitool = meld
+[difftool "meld"]
+	path = /usr/bin/meld
+[difftool]
+	prompt = false
+	keepBackup = false
+	trustExitCode = false

@@ -1,0 +1,24 @@
+[cola]
+	startupmode = list
+	theme = default
+	icontheme = dark
+	spellcheck = false
+[user]
+	name = Viktor Bekesi
+	email = viktor.bekesi@outlook.com
+[commit]
+	gpgSign = false
+[pull]
+	rebase = false
+[gui]
+	pruneduringfetch = true
+[smartgit "submodule"]
+	fetchalways = false
+	update = true
+	initializenew = true
+[push]
+	recurseSubmodules = check
+[diff]
+	tool = meld
+[merge]
+	tool = meld

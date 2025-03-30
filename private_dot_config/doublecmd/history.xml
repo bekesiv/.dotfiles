@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doublecmd>
+  <History>
+    <CommandLine>
+      <Item>gnome-terminal</Item>
+      <Item>terminal</Item>
+    </CommandLine>
+    <FileMask>
+      <Item>*</Item>
+      <Item>*result*</Item>
+      <Item>*result</Item>
+      <Item>cursor</Item>
+    </FileMask>
+    <VolumeSize/>
+    <CreateDirectories>
+      <Item Tag="0">2025-03-28 Agi szulinap etteremben</Item>
+      <Item Tag="0">ONYA</Item>
+      <Item Tag="0">Hivatalos</Item>
+      <Item Tag="0">2025-03-16 Agi Szulinap Imre bacsival</Item>
+      <Item Tag="0">pl</Item>
+      <Item Tag="0">Rome_Travel</Item>
+      <Item Tag="0">ttkbootstrap_demo</Item>
+      <Item Tag="0">extras</Item>
+      <Item Tag="0">rv</Item>
+      <Item Tag="0">_</Item>
+      <Item Tag="0">Cards</Item>
+      <Item Tag="0">aa</Item>
+      <Item Tag="0">b</Item>
+      <Item Tag="0">a</Item>
+      <Item Tag="0">Timeshift</Item>
+      <Item Tag="0">github</Item>
+      <Item Tag="0">Wallpapers</Item>
+      <Item Tag="0">Documents</Item>
+    </CreateDirectories>
+    <SearchText>
+      <Item Tag="0">_internal</Item>
+      <Item Tag="0">ninja</Item>
+      <Item Tag="0">install</Item>
+    </SearchText>
+    <SearchTextPath/>
+    <ReplaceText/>
+    <ReplaceTextPath/>
+    <RenameNameMask>
+      <Item>jpimg_20250302_09</Item>
+      <Item>jpimg_20250302_[C]</Item>
+    </RenameNameMask>
+    <RenameExtMask>
+      <Item>[E]</Item>
+    </RenameExtMask>
+    <SearchDirectories>
+      <Item>/home/tachikoma/work/github/ecalc/</Item>
+      <Item>/home/tachikoma/.var/app/com.brave.Browser/</Item>
+    </SearchDirectories>
+    <SearchExcludeFiles/>
+    <SearchExcludeDirectories/>
+  </History>
+</doublecmd>

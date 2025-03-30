@@ -1,0 +1,118 @@
+{
+    "output": {
+        "blocklist": [],
+        "crystalizer#0": {
+            "band0": {
+                "bypass": false,
+                "intensity": 0.0,
+                "mute": false
+            },
+            "band1": {
+                "bypass": false,
+                "intensity": -1.0,
+                "mute": false
+            },
+            "band10": {
+                "bypass": false,
+                "intensity": -10.0,
+                "mute": false
+            },
+            "band11": {
+                "bypass": false,
+                "intensity": -11.0,
+                "mute": false
+            },
+            "band12": {
+                "bypass": false,
+                "intensity": -12.0,
+                "mute": false
+            },
+            "band2": {
+                "bypass": false,
+                "intensity": -2.0,
+                "mute": false
+            },
+            "band3": {
+                "bypass": false,
+                "intensity": -3.0,
+                "mute": false
+            },
+            "band4": {
+                "bypass": false,
+                "intensity": -4.0,
+                "mute": false
+            },
+            "band5": {
+                "bypass": false,
+                "intensity": -5.0,
+                "mute": false
+            },
+            "band6": {
+                "bypass": false,
+                "intensity": -6.0,
+                "mute": false
+            },
+            "band7": {
+                "bypass": false,
+                "intensity": -7.0,
+                "mute": false
+            },
+            "band8": {
+                "bypass": false,
+                "intensity": -8.0,
+                "mute": false
+            },
+            "band9": {
+                "bypass": false,
+                "intensity": -9.0,
+                "mute": false
+            },
+            "bypass": false,
+            "input-gain": 0.0,
+            "output-gain": 0.0
+        },
+        "deesser#0": {
+            "bypass": false,
+            "detection": "RMS",
+            "f1-freq": 6000.0,
+            "f1-level": 0.0,
+            "f2-freq": 4500.0,
+            "f2-level": 12.0,
+            "f2-q": 1.0,
+            "input-gain": 0.0,
+            "laxity": 15,
+            "makeup": 0.0,
+            "mode": "Wide",
+            "output-gain": 0.0,
+            "ratio": 3.0,
+            "sc-listen": false,
+            "threshold": -18.0
+        },
+        "plugins_order": [
+            "crystalizer#0",
+            "deesser#0",
+            "stereo_tools#0"
+        ],
+        "stereo_tools#0": {
+            "balance-in": 0.0,
+            "balance-out": 0.0,
+            "bypass": false,
+            "delay": 0.0,
+            "input-gain": 0.0,
+            "middle-level": 0.0,
+            "middle-panorama": 0.0,
+            "mode": "LR > LR (Stereo Default)",
+            "mutel": false,
+            "muter": false,
+            "output-gain": 0.0,
+            "phasel": false,
+            "phaser": false,
+            "sc-level": 1.0,
+            "side-balance": 0.0,
+            "side-level": 0.0,
+            "softclip": false,
+            "stereo-base": 0.0,
+            "stereo-phase": 0.0
+        }
+    }
+}

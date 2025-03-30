@@ -1,0 +1,44 @@
+{
+    "editor.fontFamily": "jetbrains mono",
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily"
+    ],
+    "editor.fontSize": 13,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.fontFamily": "jetbrainsmono nerd font",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.fontSize": 13,
+    "diffEditor.renderSideBySide": false,
+    "window.newWindowProfile": "Default",
+    "workbench.colorTheme": "Default Dark+ IntelliJ Theme",
+    "sshfs.configs": [
+        {
+            "name": "root@nas",
+            "host": "192.168.2.80",
+            "username": "root",
+            "privateKeyPath": "/home/tachikoma/.ssh/root-nas"
+        },
+        {
+            "name": "tachikoma@nas",
+            "host": "192.168.2.80",
+            "username": "root",
+            "privateKeyPath": "/home/tachikoma/.ssh/tachikoma-nas"
+        }
+    ],
+    "workspaceExplorer.workspaceStorageDirectory": "~/vscode_workspaces",
+    "window.zoomPerWindow": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": 0.75,
+    "workspaceSidebar.rootFolders": [
+        {
+            "path": "/home/tachikoma/vscode_workspaces"
+        }
+    ],
+    "python.createEnvironment.contentButton": "show",
+    "pylint.ignorePatterns": [
+        ""
+    ],
+    "window.titleBarStyle": "custom",
+    "github.gitProtocol": "ssh",
+    "git.confirmSync": false
+}
