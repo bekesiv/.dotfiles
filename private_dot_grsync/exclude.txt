@@ -1,0 +1,8 @@
+venv
+.venv
+pyinstaller
+.pyinstaller
+__pycache__
+.tox
+Wineglass
+ViberDownloads
