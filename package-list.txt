@@ -7,8 +7,6 @@ bind9-dnsutils:amd64
 bind9-host:amd64
 bind9-libs:amd64
 blt:amd64
-brave-browser:amd64
-brave-keyring:all
 bridge-utils:amd64
 bruno:amd64
 cabextract:amd64
@@ -43,10 +41,6 @@ gcc-12-base:i386
 gdal-data:all
 gdal-plugins:amd64
 gettext:amd64
-gimp:amd64
-gimp-data:all
-gimp-gmic:amd64
-gimp-plugin-registry:amd64
 gir1.2-ayatanaappindicator3-0.1:amd64
 gir1.2-gee-0.8:amd64
 gir1.2-gexiv2-0.10:amd64
