@@ -2,11 +2,11 @@
 set -e
 
 # Bookworm backport repos
-echo "deb https://deb.debian.org/debian bookworm-backports main non-free-firmware" | sudo tee /etc/apt/sources.list
-echo "deb-src https://deb.debian.org/debian bookworm-backports main non-free-firmware" | sudo tee /etc/apt/sources.list
-echo "deb http://download.opensuse.org/repositories/home:/Alexx2000/Debian_12/ /" | sudo tee /etc/apt/sources.list
-echo "deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list
-#echo "deb [signed-by=/usr/share/keyrings/teamviewer-keyring.gpg] https://linux.teamviewer.com/deb stable main" | sudo tee /etc/apt/sources.list
+echo "deb https://deb.debian.org/debian bookworm-backports main non-free-firmware" | sudo tee -a /etc/apt/sources.list
+echo "deb-src https://deb.debian.org/debian bookworm-backports main non-free-firmware" | sudo tee -a /etc/apt/sources.list
+echo "deb http://download.opensuse.org/repositories/home:/Alexx2000/Debian_12/ /" | sudo tee -a /etc/apt/sources.list
+echo "deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/repos/code stable main" | sudo tee -a /etc/apt/sources.list
+#echo "deb [signed-by=/usr/share/keyrings/teamviewer-keyring.gpg] https://linux.teamviewer.com/deb stable main" | sudo tee -a /etc/apt/sources.list
 
 # Install missing packages
 for pkg in $(cat package-list.txt); do
