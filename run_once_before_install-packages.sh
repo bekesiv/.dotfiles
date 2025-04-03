@@ -10,6 +10,8 @@ sudo mkdir -p "$sources_destdir"
 for file in "$pkgmgmt/sources"/*.sources; do
     echo ">>>>>>>>>>> $file"
     [ -f "$file" ] || continue  # Skip if no .sources files exist
+    
+    echo ">>> 0"
 
     # Extract KeyUrl and KeyPath from the .sources file (if they exist)
     key_url=$(grep -E "^.?Key-Url:" "$file" | awk '{print $2}')
