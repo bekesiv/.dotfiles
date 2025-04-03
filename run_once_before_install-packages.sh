@@ -8,6 +8,7 @@ sources_destdir="/etc/apt/sources.list.d/"
 # Adding apt repositories
 sudo mkdir -p "$sources_destdir"
 for file in "$pkgmgmt/sources"/*.sources; do
+    echo ">>>>>>>>>>> $file"
     [ -f "$file" ] || continue  # Skip if no .sources files exist
 
     # Extract KeyUrl and KeyPath from the .sources file (if they exist)
