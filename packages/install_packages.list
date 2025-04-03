@@ -18,10 +18,5 @@ seabios:all
 variety:all
 virt-manager:all
 wget:amd64
-winehq-stable:amd64
-wine-stable:amd64
-wine-stable-amd64:amd64
-wine-stable-i386:i386
-winetricks:all
 youtubedl-gui:amd64
 yt-dlp:all
