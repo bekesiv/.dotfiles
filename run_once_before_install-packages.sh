@@ -15,7 +15,9 @@ for file in "$pkgmgmt/sources"/*.sources; do
 
     # Extract KeyUrl and KeyPath from the .sources file (if they exist)
     key_url=$(grep -E "^.?Key-Url:" "$file" | awk '{print $2}')
+    echo ">>> 0.1"
     key_path=$(grep -E "^Signed-By:" "$file" | awk '{print $2}')
+    echo ">>> 0.2"
     dearmor=$(awk '/^.?Dearmor:/ {print $2}' "$src_file")
 
     echo ">>> 1 ($key_url|$key_path|$dearmor)"
