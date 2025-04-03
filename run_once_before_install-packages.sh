@@ -31,7 +31,6 @@ while IFS= read -r key; do
   curl -fsSL "$key" | sudo apt-key add -
 done < "$chezmoi_dir/packages/apt-keys.list"
 
-
 # Update package lists
 echo "🔄 Updating APT sources..."
 sudo apt update
@@ -39,21 +38,25 @@ sudo apt update
 # Remove not needed packages
 sudo apt remove -y --autoremove --ignore-missing $(tr '\n' ' ' < "$chezmoi_dir/packages/remove_packages.list")
 
-# # Install missing packages
-# for pkg in $(cat package-list.txt); do
-#     if ! dpkg -l | grep -q "^ii  $pkg "; then
-#         echo "Installing $pkg..."
-#         sudo apt-get install -y $pkg
-#     else
-#         echo "$pkg is already installed."
-#     fi
-# done
+# Install missing packages
+sudo apt install -y --ignore-missing $(tr '\n' ' ' < "$chezmoi_dir/packages/install_packages.list")
 
 # Flatpaks
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install -y $(tr '\n' ' ' < "$chezmoi_dir/packages/flatpak.list")
 flatpak uninstall --unused
 
+# Install Jetbrains Mono Nerd Font
+echo "Installing JetBrains Mono Nerd Font..."
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+wget -q --show-progress "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
+unzip -o JetBrainsMono.zip
+rm JetBrainsMono.zip
+
+# Refresh font cache
+fc-cache -fv
+echo "JetBrains Mono Nerd Font installed successfully!"
 
 # Oh-My-Posh
 curl -s https://ohmyposh.dev/install.sh | bash -s
@@ -62,8 +65,8 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 curl -fsS https://dl.brave.com/install.sh | sh
 
 # TeamViewer
-wget -P ~/Downloads "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-sudo apt install ~/Downloads/teamviewer_amd64.deb
+# wget -P ~/Downloads "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+# sudo apt install ~/Downloads/teamviewer_amd64.deb
 
 sudo apt autoremove
 
