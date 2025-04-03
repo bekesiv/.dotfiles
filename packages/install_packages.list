@@ -15,7 +15,6 @@ qemu-system-gui:amd64
 qemu-system-x86:amd64
 qemu-utils:amd64
 seabios:all
-teamviewer:amd64
 variety:all
 virt-manager:all
 wget:amd64
