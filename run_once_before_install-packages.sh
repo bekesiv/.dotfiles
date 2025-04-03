@@ -8,20 +8,11 @@ sources_destdir="/etc/apt/sources.list.d/"
 # Adding apt repositories
 sudo mkdir -p "$sources_destdir"
 for file in "$pkgmgmt/sources"/*.sources; do
-    echo ">>>>>>>>>>> $file"
     [ -f "$file" ] || continue  # Skip if no .sources files exist
-    
-    echo ">>> 0"
-
     # Extract KeyUrl and KeyPath from the .sources file (if they exist)
     key_url=$(grep -E "^.?Key-Url:" "$file" | awk '{print $2}')
-    echo ">>> 0.1"
     key_path=$(grep -E "^Signed-By:" "$file" | awk '{print $2}')
-    echo ">>> 0.2"
     dearmor=$(grep -E "^.Dearmor:" "$file" | awk '{print $2}')
-
-    echo ">>> 1 ($key_url|$key_path|$dearmor)"
-
     # If both KeyUrl and KeyPath exist, download the key
     if [[ -n "$key_url" && -n "$key_path" ]]; then
         echo "Downloading GPG key from $key_url to $key_path..."
@@ -36,24 +27,17 @@ for file in "$pkgmgmt/sources"/*.sources; do
             echo "Error: Neither curl nor wget found. Cannot download the key." >&2
             continue
         fi
-
         # Convert to binary format if required
         if [[ "$dearmor" == "Yes" ]]; then
             sudo gpg --dearmor "$key_path"
             # sudo mv "${key_path}.gpg" "$key_path"
         fi
-
-        echo ">>> 2"
-
         # Set correct ownership and permissions
         sudo chown root:root "$key_path"
         sudo chmod 644 "$key_path"
 
         echo "Key downloaded and installed: $key_path"
     fi
-
-    echo ">>> 3"
-
     # Install the .sources file
     sudo install -v -o root -g root -m 644 "$file" "$sources_destdir"
     echo "Installed: $(basename "$file")"
