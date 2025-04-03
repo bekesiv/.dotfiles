@@ -47,8 +47,6 @@ done
 echo "🔄 Updating APT sources..."
 sudo apt update
 
-exit 0
-
 # Remove not needed packages
 sudo apt remove -y --autoremove --ignore-missing $(tr '\n' ' ' < "$pkgmgmt/remove_packages.list")
 
