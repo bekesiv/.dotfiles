@@ -78,7 +78,7 @@ curl -fsS https://dl.brave.com/install.sh | sh
 
 # TeamViewer
 wget -P ~/Downloads "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-sudo apt install -y ~/Downloads/teamviewer_amd64.deb
+sudo dpkg -i ~/Downloads/teamviewer_amd64.deb
 
 #Gnome settings
 dconf load / < "$chezmoi_dir/dconf_settings_dump.dconf"
