@@ -30,7 +30,7 @@ for file in "$pkgmgmt/sources"/*.sources; do
         # Convert to binary format if required
         if [[ "$dearmor" == "Yes" ]]; then
             sudo gpg --dearmor "$key_path"
-            # sudo mv "${key_path}.gpg" "$key_path"
+            sudo mv "${key_path}.gpg" "$key_path"
         fi
         # Set correct ownership and permissions
         sudo chown root:root "$key_path"
