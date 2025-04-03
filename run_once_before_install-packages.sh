@@ -18,7 +18,7 @@ for file in "$pkgmgmt/sources"/*.sources; do
     echo ">>> 0.1"
     key_path=$(grep -E "^Signed-By:" "$file" | awk '{print $2}')
     echo ">>> 0.2"
-    dearmor=$(awk '/^.?Dearmor:/ {print $2}' "$src_file")
+    dearmor=$(grep -E "^.Dearmor:" "$file" | awk '{print $2}')
 
     echo ">>> 1 ($key_url|$key_path|$dearmor)"
 
