@@ -31,6 +31,8 @@ while IFS= read -r key; do
   curl -fsSL "$key" | sudo apt-key add -
 done < "$chezmoi_dir/packages/apt-keys.list"
 
+#curl -fsSL <KEY_URL> | sudo tee /etc/apt/trusted.gpg.d/<repo_name>.gpg > /dev/null
+
 # Update package lists
 echo "🔄 Updating APT sources..."
 sudo apt update
@@ -71,4 +73,4 @@ curl -fsS https://dl.brave.com/install.sh | sh
 sudo apt autoremove
 
 #Gnome settings
-dconf load / "$chezmoi_dir/dconf_settings_dump.dconf"
+dconf load / < "$chezmoi_dir/dconf_settings_dump.dconf"
