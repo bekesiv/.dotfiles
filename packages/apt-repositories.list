@@ -1,5 +1,0 @@
-deb https://deb.debian.org/debian bookworm-backports main non-free-firmware
-deb-src https://deb.debian.org/debian bookworm-backports main non-free-firmware
-deb http://download.opensuse.org/repositories/home:/Alexx2000/Debian_12/ /
-deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/repos/code stable main
-#deb [signed-by=/usr/share/keyrings/teamviewer-keyring.gpg] https://linux.teamviewer.com/deb stable main
