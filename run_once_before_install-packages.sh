@@ -23,6 +23,15 @@ while IFS= read -r repo; do
   fi
 done < "$chezmoi_dir/packages/apt-repositories.list"
 
+# Adding apt repository keys
+while IFS= read -r key; do
+  # Skip empty lines and comments
+  [[ -z "$key" || "$key" =~ ^# ]] && continue
+  echo "➕ Adding repository key: $key"
+  curl -fsSL "$key" | sudo apt-key add -
+done < "$chezmoi_dir/packages/apt-keys.list"
+
+
 # Update package lists
 echo "🔄 Updating APT sources..."
 sudo apt update
