@@ -21,6 +21,15 @@ for pkg in $(cat package-list.txt); do
     fi
 done
 
+# Flatpaks
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak uninstall --unused
+
+
+# Oh-My-Posh
+curl -s https://ohmyposh.dev/install.sh | bash -s
+
 # Brave Browser
 curl -fsS https://dl.brave.com/install.sh | sh
 
@@ -29,3 +38,6 @@ wget -P ~/Downloads "https://download.teamviewer.com/download/linux/teamviewer_a
 sudo apt install ~/Downloads/teamviewer_amd64.deb
 
 sudo apt autoremove
+
+#Gnome settings
+dconf load / ~/.local/share/chezmoi/dconf_settings_dump.dconf
