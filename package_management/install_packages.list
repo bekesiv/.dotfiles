@@ -22,3 +22,4 @@ youtubedl-gui:amd64
 yt-dlp:all
 libminizip1
 policykit-1
+code
