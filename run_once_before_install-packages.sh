@@ -21,7 +21,7 @@ while IFS= read -r repo; do
     echo "➕ Adding repository: $repo"
     sudo apt-add-repository "$repo"
   fi
-done < "$chezmoi_dir/packages/apt-repositories.txt"
+done < "$chezmoi_dir/packages/apt-repositories.list"
 
 # Update package lists
 echo "🔄 Updating APT sources..."
