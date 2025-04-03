@@ -1069,8 +1069,8 @@ copy='<Primary><Shift>c'
 
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 cursor-shape='underline'
-default-size-columns=200
-default-size-rows=40
+default-size-columns=120
+default-size-rows=32
 font='JetBrainsMono Nerd Font 12'
 use-system-font=false
 
