@@ -16,6 +16,8 @@ for file in "$pkgmgmt/sources"/*.sources; do
     key_path=$(grep -E "^Signed-By:" "$file" | awk '{print $2}')
     dearmor=$(awk '/^.?Dearmor:/ {print $2}' "$src_file")
 
+    echo ">>> 1 ($key_url|$key_path|$dearmor)"
+
     # If both KeyUrl and KeyPath exist, download the key
     if [[ -n "$key_url" && -n "$key_path" ]]; then
         echo "Downloading GPG key from $key_url to $key_path..."
@@ -37,6 +39,8 @@ for file in "$pkgmgmt/sources"/*.sources; do
             # sudo mv "${key_path}.gpg" "$key_path"
         fi
 
+        echo ">>> 2"
+
         # Set correct ownership and permissions
         sudo chown root:root "$key_path"
         sudo chmod 644 "$key_path"
@@ -44,8 +48,10 @@ for file in "$pkgmgmt/sources"/*.sources; do
         echo "Key downloaded and installed: $key_path"
     fi
 
+    echo ">>> 3"
+
     # Install the .sources file
-    sudo install -o root -g root -m 644 "$file" "$sources_destdir"
+    sudo install -v -o root -g root -m 644 "$file" "$sources_destdir"
     echo "Installed: $(basename "$file")"
 done
 
