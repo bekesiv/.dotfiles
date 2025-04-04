@@ -65,8 +65,8 @@ flatpak uninstall --unused
 
 # Install Jetbrains Mono Nerd Font
 echo "Installing JetBrains Mono Nerd Font..."
-mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts
+mkdir -p "$HOME/.local/share/fonts"
+cd "$HOME/.local/share/fonts"
 wget -q --show-progress "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
 unzip -o JetBrainsMono.zip
 rm JetBrainsMono.zip
@@ -78,12 +78,19 @@ echo "JetBrains Mono Nerd Font installed successfully!"
 # Oh-My-Posh
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
+# eCalc
+mkdir "$HOME/work/github"
+cd "$HOME/work/github"
+git clone git@github.com:bekesiv/ecalc.git
+cd install
+./make_installer.sh   
+
 # Brave Browser
 curl -fsS https://dl.brave.com/install.sh | sh
 
 # TeamViewer
-wget -P ~/Downloads "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-sudo dpkg -i ~/Downloads/teamviewer_amd64.deb
+wget -P "$HOME/Downloads" "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+sudo dpkg -i "$HOME/Downloads/teamviewer_amd64.deb"
 
 #Gnome settings
 dconf load / < "$chezmoi_dir/dconf_settings_dump.dconf"
