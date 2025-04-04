@@ -25,6 +25,7 @@ inxi
 linux-image-amd64
 meld
 python3-poetry
+python3.11-venv
 qemu-kvm
 qemu-block-extra
 qemu-system-common
