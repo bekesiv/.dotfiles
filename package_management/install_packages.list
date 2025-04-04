@@ -23,6 +23,7 @@ hardinfo
 htop
 inxi
 linux-image-amd64
+mc
 meld
 python3-poetry
 python3.11-venv
