@@ -64,8 +64,8 @@ flatpak install -y $(tr '\n' ' ' < "$pkgmgmt/flatpak.list")
 flatpak uninstall --unused
 
 # Install Jetbrains Mono Nerd Font
-fonts_dir="$HOME/.local/share/fonts"
-if [ ! -d "$fonts_dir/JetBrains" ]; then
+fonts_dir="$HOME/.local/share/fonts/JetBrains/TrueType"
+if [ ! -d "$fonts_dir" ]; then
     echo "Installing JetBrains Mono Nerd Font..."
     mkdir -p "$fonts_dir"
     cd "$fonts_dir"
@@ -73,7 +73,6 @@ if [ ! -d "$fonts_dir/JetBrains" ]; then
     unzip -o JetBrainsMono.zip
     rm JetBrainsMono.zip
 fi
-
 # Refresh font cache
 fc-cache -fv
 echo "JetBrains Mono Nerd Font installed successfully!"
@@ -85,7 +84,7 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 mkdir -p "$HOME/work/github"
 cd "$HOME/work/github"
 git clone git@github.com:bekesiv/ecalc.git
-cd install
+cd ecalc/install
 ./make_installer.sh   
 
 # Brave Browser
