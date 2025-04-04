@@ -3,7 +3,12 @@ set -e
 
 chezmoi_dir="$HOME/.local/share/chezmoi"
 pkgmgmt="$chezmoi_dir/package_management"
+files_dir="$chezmoi_dir/files"
 sources_destdir="/etc/apt/sources.list.d/"
+
+# Custom Locale
+sudo install -v -o root -g root -m 644 "$files_dir/hu_HU_custom" "/usr/share/i18n/locales/hu_HU_custom"
+sudo localedef -i hu_HU_custom -f UTF-8 hu_HU.UTF-8@custom
 
 # Adding apt repositories
 sudo mkdir -p "$sources_destdir"
@@ -82,3 +87,14 @@ sudo dpkg -i ~/Downloads/teamviewer_amd64.deb
 
 #Gnome settings
 dconf load / < "$chezmoi_dir/dconf_settings_dump.dconf"
+
+# Flatpak does not respect gtk cursors
+flatpak --user override --filesystem=/home/$USER/.icons/:ro
+flatpak --user override --filesystem=/usr/share/icons/:ro
+
+#TODO: Gnome extensions and their configurations
+#TODO: flatpak apps configuration
+#TODO: VSCode extensions and configurations
+#TODO: Printing
+#TODO: Custom Color Profie
+#TODO: Wine

@@ -60,6 +60,11 @@ fonts-telu-extra
 fonts-teluguvijayam
 fonts-ukij-uyghur
 fonts-yrsa-rasa
+fortune-mod
+fortunes-debian-hints
+fortunes-it
+four-in-a-row
+gnome-2048
 gnome-games
 gnome-klotski
 gnome-mahjongg
@@ -68,3 +73,12 @@ gnome-robots
 gnome-sudoku
 gnome-taquin
 gnome-tetravex
+goldendict
+hitori
+iagno
+itools
+quadrapassel
+tali
+transmission-common
+transmission-gtk
+
