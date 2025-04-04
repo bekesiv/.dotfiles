@@ -3,6 +3,7 @@ autoconf
 automake
 corectrl
 cpu-checker
+curl
 dconf-editor
 doublecmd-common
 doublecmd-gtk
