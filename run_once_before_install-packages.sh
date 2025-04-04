@@ -72,10 +72,10 @@ if [ ! -d "$fonts_dir" ]; then
     wget -q --show-progress "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
     unzip -o JetBrainsMono.zip
     rm JetBrainsMono.zip
+    # Refresh font cache
+    fc-cache -fv
+    echo "JetBrains Mono Nerd Font installed successfully!"
 fi
-# Refresh font cache
-fc-cache -fv
-echo "JetBrains Mono Nerd Font installed successfully!"
 
 # Oh-My-Posh
 curl -s https://ohmyposh.dev/install.sh | bash -s
