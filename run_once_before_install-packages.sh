@@ -78,21 +78,27 @@ if [ ! -d "$fonts_dir" ]; then
 fi
 
 # Oh-My-Posh
-curl -s https://ohmyposh.dev/install.sh | bash -s
+type oh-my-posh || curl -s https://ohmyposh.dev/install.sh | bash -s
 
 # eCalc
-mkdir -p "$HOME/work/github"
-cd "$HOME/work/github"
-git clone git@github.com:bekesiv/ecalc.git
-cd ecalc/install
-./make_installer.sh   
+github_dir="$HOME/work/github"
+if [ ! -d "$github_dir" ]; then
+    mkdir -p "$github_dir"
+    cd "$github_dir"
+    git clone git@github.com:bekesiv/ecalc.git
+    cd ecalc/install
+    ./make_installer.sh   
+fi
 
 # Brave Browser
-curl -fsS https://dl.brave.com/install.sh | sh
+type brave-browser || curl -fsS https://dl.brave.com/install.sh | sh
 
 # TeamViewer
-wget -P "$HOME/Downloads" "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-sudo dpkg -i "$HOME/Downloads/teamviewer_amd64.deb"
+type teamviewer
+if [ $? -ne 0 ]; then
+    wget -P "$HOME/Downloads" "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+    sudo dpkg -i "$HOME/Downloads/teamviewer_amd64.deb"
+fi
 
 #Gnome settings
 dconf load / < "$chezmoi_dir/dconf_settings_dump.dconf"
